@@ -17,11 +17,19 @@
 			});
 
 			$item.focus(function(){
-				if($item.val() == ($item.attr("placeholder") || options.message)) {
-					$item.val('');
+		    if($item.val() == ($item.attr("placeholder") || options.message)) {
+          $item.select();
+				}else{
+				  $item.val('');
 				}
 				$item.removeClass(options.style);
 			});
+			
+      $item.click(function() {
+        if ($item.val().length > 0 && $item.val() === $item.attr("placeholder")) {
+          $item.val("");
+        };
+      });
 
 			// this is a very hackish way to append to the event bubble
 			$item.parents("form:first").one('submit', function(event) {
