@@ -19,9 +19,7 @@
 			$item.focus(function(){
 		    if($item.val() == ($item.attr("placeholder") || options.message)) {
           $item.select();
-				}else{
-				  $item.val('');
-				}
+				};
 				$item.removeClass(options.style);
 			});
 			
